@@ -140,3 +140,34 @@ Also set DNS permanently via:
 This troubleshooting log exists to show that **system administration is iterative**, and real learning happens during failure analysis. Every issue here contributed directly to a deeper understanding of Linux, networking, and Proxmox.
 
 ---
+
+## Proxmox Troubleshooting
+
+```md
+# Troubleshooting
+
+## Portainer refused to connect
+
+**Symptoms**
+- Browser showed connection timeout
+- `curl https://127.0.0.1:9000` SSL errors
+
+**Cause**
+- Port 9000 is HTTP, not HTTPS
+- Firewall rules not enabled at correct Proxmox level
+- UFW initially disabled
+
+**Fix**
+- Accessed via `http://<VM-IP>:9000`
+- Enabled firewall rules at VM level
+- Enabled UFW and allowed port 9000/tcp
+
+---
+
+## Proxmox Web UI stopped loading
+
+**Cause**
+- Firewall rule accidentally blocked port 8006
+
+**Fix**
+- Restored rule allowing TCP 8006 from LAN
