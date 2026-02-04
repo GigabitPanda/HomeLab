@@ -10,7 +10,7 @@ This repository documents the **initial setup and troubleshooting journey** of b
 
 ---
 
-# 📄 README.md
+#  README.md
 
 ## Table of Contents
 
@@ -66,10 +66,10 @@ The system is intended to be:
 
 ## Final System State
 
-### 🧩 Architecture Overview
+###  Architecture Overview
 
 ```
-[ Home Router / Gateway ] 192.168.1.254
+[ Home Router / Gateway ] 192.168.1.xxx
            │
            │  (Ethernet)
            ▼
@@ -77,7 +77,7 @@ The system is intended to be:
 │  Proxmox Host (Laptop)     │
 │  Debian 12 (Bookworm)      │
 │                            │
-│  vmbr0  ── 192.168.1.50    │
+│  vmbr0  ── 192.168.1.xx    │
 │     │                      │
 │     ├── Ubuntu Server VM   │
 │     │     192.168.1.xxx    │
@@ -120,7 +120,7 @@ The system is intended to be:
 
 ## Lessons Learned / Gotchas
 
-* **If the Web UI loads on `127.0.0.1` but not remotely, it is almost always networking or DNS**
+* **If the Web UI loads on `127.0.0.x` but not remotely, it is almost always networking or DNS**
 * `inet manual` on physical NICs is *normal* in Proxmox
 * Always verify DNS with `ping deb.debian.org`, not just IPs like `8.8.8.8`
 * Proxmox defaults are enterprise-focused; homelabs must intentionally switch repos
