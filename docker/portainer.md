@@ -1,1 +1,19 @@
+# Portainer Setup
+
+## Installation Method
+Portainer was deployed as a Docker container on Ubuntu Server.
+
+## Docker Command Used
+
+```bash
+docker volume create portainer_data
+
+docker run -d \
+  --name portainer \
+  -p 9000:9000 \
+  -p 8000:8000 \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  portainer/portainer-ce
 
