@@ -147,3 +147,49 @@ The system is intended to be:
 * Implement backups and snapshots
 
 ---
+
+# Updates
+
+---
+
+## 🧱 Stack Overview
+
+- **Hypervisor:** Proxmox VE
+- **Primary VM OS:** Ubuntu Server 24.04 LTS
+- **Containers:** Docker
+- **Container Management:** Portainer
+- **Firewall:** Proxmox Firewall + UFW
+- **Host OS:** Bare-metal Proxmox node
+
+---
+
+## 🗺️ Architecture
+
+See the architecture diagram here:  
+📁 `architecture/diagram.png`
+
+---
+
+## 📂 Repository Structure
+
+- `proxmox/` — Proxmox installation, storage, networking, firewall rules
+- `vms/` — Virtual machine setup notes
+- `docker/` — Docker & Portainer configuration
+- `troubleshooting.md` — Issues encountered and fixes
+- `lessons-learned.md` — Gotchas and takeaways
+
+---
+
+## 🚀 Current Status
+
+✅ Proxmox installed and accessible  
+✅ Ubuntu Server VM deployed  
+✅ Docker installed  
+✅ Portainer running  
+✅ Bind mounts working (verified)
+
+---
+
+## 📓 Notes
+
+This repo documents **real setup struggles**, not just ideal steps.
